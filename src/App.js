@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useState } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 // components
 import { Button } from "./components/Button";
@@ -32,6 +32,7 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+  localStorage.setItem("diary", JSON.stringify(newState));
   return newState;
 };
 export const DiaryStateContext = React.createContext();
@@ -39,9 +40,13 @@ export const DiaryDispatchContext = React.createContext();
 export const handleEditContext = React.createContext();
 
 function App() {
-  const [data, dispatch] = useReducer(reducer, []);
+  const initialData = localStorage.getItem("diary")
+    ? JSON.parse(localStorage.getItem("diary"))
+    : [];
+  const [data, dispatch] = useReducer(reducer, initialData);
   const [info, setInfo] = useState({});
   const dateId = useRef(0);
+
   //CREATE
   const onCreate = (date, content, emotion) => {
     dispatch({

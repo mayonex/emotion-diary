@@ -82,11 +82,12 @@ body {
 .Home .control-bar {
   display: grid;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   grid-template-columns: 0.6fr 0.8fr 2fr;
   gap: 15px;
 }
-.option-date,
-.option-mood {
+.select-date,
+.select-mood {
   border: none;
   background-color: var(--color-grey-btn);
   border-radius: 5px;
@@ -95,7 +96,7 @@ body {
   font-size: 18px;
 }
 
-.option-mood {
+.select-mood {
   padding-left: 1rem;
 }
 .control-bar .Button_positive {
@@ -163,8 +164,8 @@ a {
 }
 .moods .mood_default {
   border-radius: 0.5rem;
-  padding: 1.5rem 1rem;
-  white-space: nowrap;
+  padding: 1.5rem 0rem;
+  white-space: no-wrap;
 }
 .moods .mood_default img {
   width: 60px;
@@ -188,19 +189,18 @@ a {
   background-color: var(--color-mood-horrible);
 }
 
-.lists {
-  padding-top: 2rem;
-}
 .list {
   display: grid;
   grid-template-columns: 2fr 8fr;
   height: 110px;
   padding: 0.8rem 0;
   border-bottom: 1px solid var(--color-grey-btn);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .list-img .mood_default {
   width: 120px;
-  height: 100%;
+  height: 80px;
   border-radius: 5px;
 }
 .list-img .mood_default_1 {
@@ -221,21 +221,22 @@ a {
 
 .list-img .mood_default img {
   width: 60px;
+  height: 60px;
 }
 .list-content {
   display: grid;
-  grid-template-columns: 2fr 8fr;
+  grid-template-columns: 8fr 2fr;
   padding-left: 1rem;
   font-family: "Nanum Pen Script";
 }
 .list-content .content {
-  display: flex;
-  flex-direction: column;
   font-size: 24px;
+}
+.list-content .content-date {
+  white-space: nowrap;
 }
 .list-content .content-text {
   margin-top: 0.6rem;
-  white-space: nowrap;
   font-size: 20px;
 }
 .content-edit-btn {
@@ -300,10 +301,13 @@ a {
   height: 200px;
   background-color: var(--color-grey-btn);
   margin-top: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
   font-family: "Nanum Pen Script";
   font-size: 1.5rem;
+  word-break: break-all;
 }

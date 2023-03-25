@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { handleEditContext } from "../App";
 import { Button } from "../components/Button";
@@ -12,6 +12,10 @@ export default function Diary() {
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
+  useEffect(() => {
+    const titleElement = document.querySelector("title");
+    titleElement.innerHTML = `감정 일기장`;
+  }, []);
   return (
     <div className="Diary">
       <Header
@@ -46,7 +50,9 @@ export default function Diary() {
       </section>
       <section className="diary__content">
         <div className="content-title">오늘의 일기</div>
-        <div className="content">{info.content}</div>
+        <div className="content">
+          <span>{info.content}</span>
+        </div>
       </section>
     </div>
   );

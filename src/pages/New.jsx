@@ -66,9 +66,10 @@ export default function New() {
       <section className="New__mood">
         <h4>오늘의 감정</h4>
         <div className="moods">
-          {emotionList.map((item) => {
+          {emotionList.map((item, index) => {
             return (
               <Moods
+                key={index}
                 handleMoodsToggle={handleMoodsToggle}
                 mood={item.emotion_mood}
                 text={item.emotion_text}
