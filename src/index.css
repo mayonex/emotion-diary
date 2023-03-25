@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+@import url("reset.css");
+:root {
+  --color-bg: #f6f6f6;
+  --color-grey-btn: #ececec;
+  --color-green-btn: #63c963;
+  --color-red-btn: #fd565f;
+  --color-mood-horrible: #fd565f;
+  --color-mood-bad: #fd8345;
+  --color-mood-soso: #fece14;
+  --color-mood-good: #9cd672;
+  --color-mood-very-good: #63c963;
+}
+body {
+  background-color: var(--color-bg);
+}
+.App {
+  margin: auto;
+  padding: 20px;
+  font-family: "Nanum Pen Script", cursive;
+  font-family: "Yeon Sung", cursive;
+  font-size: 20px;
+  width: 700px;
+  min-height: 100vh;
+  background-color: white;
+}
+@media (min-width: 650px) {
+  .App {
+    width: 680px;
+  }
+}
+@media (max-width: 650px) {
+  .App {
+    width: 90vw;
+  }
+}
+
+.Button {
+  cursor: pointer;
+  border: none;
+  padding: 13px 20px;
+  border-radius: 5px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+.Button_positive {
+  background-color: var(--color-green-btn);
+  color: white;
+}
+.Button_negative {
+  background-color: var(--color-red-btn);
+  color: white;
+}
+.Button_default {
+  background-color: var(--color-grey-btn);
+}
+.Header {
+  border-bottom: 0.5px solid gray;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: "Nanum Pen Script";
+}
+.Header div {
+  width: 33%;
+  display: flex;
+}
+.Header div:first-child {
+  justify-content: flex-start;
+}
+.Header div:nth-child(2) {
+  justify-content: center;
+}
+.Header div:nth-child(3) {
+  justify-content: flex-end;
+}
+.Home .control-bar {
+  display: grid;
+  padding-top: 1rem;
+  grid-template-columns: 0.6fr 0.8fr 2fr;
+  gap: 15px;
+}
+.option-date,
+.option-mood {
+  border: none;
+  background-color: var(--color-grey-btn);
+  border-radius: 5px;
+  padding-left: 1rem;
+  font-family: "Nanum Pen Script";
+  font-size: 18px;
+}
+
+.option-mood {
+  padding-left: 1rem;
+}
+.control-bar .Button_positive {
+  width: 100%;
+}
+.Button_positive {
+  font-family: "Nanum Pen Script";
+}
+.Button_default {
+  font-family: "Nanum Pen Script";
+}
+a {
+  text-decoration: none;
+}
+.New__date {
+  padding-top: 3rem;
+}
+.New__date input {
+  margin-top: 20px;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--color-grey-btn);
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "Nanum Pen Script";
+  font-size: 1.2rem;
+}
+.New__mood {
+  padding-top: 3rem;
+}
+.New__text {
+  padding-top: 3rem;
+}
+.New__text textarea {
+  margin-top: 2rem;
+  width: 100%;
+  height: 250px;
+  background-color: var(--color-grey-btn);
+  border: none;
+  border-radius: 1rem;
+  resize: none;
+  outline: none;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  font-family: "Nanum Pen Script";
+}
+.New__btn {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.moods {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 10px;
+}
+.mood_default {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-grey-btn);
+}
+.moods .mood_default {
+  border-radius: 0.5rem;
+  padding: 1.5rem 1rem;
+  white-space: nowrap;
+}
+.moods .mood_default img {
+  width: 60px;
+}
+.moods .mood_default span {
+  margin-top: 1rem;
+}
+.mood_active_1 {
+  background-color: var(--color-mood-very-good);
+}
+.mood_active_2 {
+  background-color: var(--color-mood-good);
+}
+.mood_active_3 {
+  background-color: var(--color-mood-soso);
+}
+.mood_active_4 {
+  background-color: var(--color-mood-bad);
+}
+.mood_active_5 {
+  background-color: var(--color-mood-horrible);
+}
+
+.lists {
+  padding-top: 2rem;
+}
+.list {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  height: 110px;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--color-grey-btn);
+}
+.list-img .mood_default {
+  width: 120px;
+  height: 100%;
+  border-radius: 5px;
+}
+.list-img .mood_default_1 {
+  background-color: var(--color-mood-very-good);
+}
+.list-img .mood_default_2 {
+  background-color: var(--color-mood-good);
+}
+.list-img .mood_default_3 {
+  background-color: var(--color-mood-soso);
+}
+.list-img .mood_default_4 {
+  background-color: var(--color-mood-bad);
+}
+.list-img .mood_default_5 {
+  background-color: var(--color-mood-horrible);
+}
+
+.list-img .mood_default img {
+  width: 60px;
+}
+.list-content {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  padding-left: 1rem;
+  font-family: "Nanum Pen Script";
+}
+.list-content .content {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+}
+.list-content .content-text {
+  margin-top: 0.6rem;
+  white-space: nowrap;
+  font-size: 20px;
+}
+.content-edit-btn {
+  display: flex;
+  justify-content: flex-end;
+  height: 45px;
+}
+.content-edit-btn .Button {
+  margin-top: 10px;
+}
+.Edit .Button_negative {
+  width: 80px;
+  font-size: 1rem;
+  font-family: "Nanum Pen Script";
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.diary__mood {
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.diary__mood .mood_default {
+  margin-top: 3rem;
+  width: 250px;
+  height: 250px;
+  border-radius: 1rem;
+}
+.diary__mood .mood_default_1 {
+  background-color: var(--color-mood-very-good);
+}
+.diary__mood .mood_default_2 {
+  background-color: var(--color-mood-good);
+}
+.diary__mood .mood_default_3 {
+  background-color: var(--color-mood-soso);
+}
+.diary__mood .mood_default_4 {
+  background-color: var(--color-mood-bad);
+}
+.diary__mood .mood_default_5 {
+  background-color: var(--color-mood-horrible);
+}
+
+.diary__content {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.diary__content .content-title {
+  font-size: 1.5rem;
+  font-family: "Yeon Sung", cursive;
+}
+.diary__content .content {
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-grey-btn);
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  font-family: "Nanum Pen Script";
+  font-size: 1.5rem;
+}
